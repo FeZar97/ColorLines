@@ -4,7 +4,7 @@
 #include <QQmlEngine>
 #include <QtQml>
 
-#include "FieldModel.h"
+#include "src/core/FieldModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<ColorLines::FieldModel>("FieldModel", 1, 0, "FieldModel");
 
     QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
+    const QUrl url(QStringLiteral("qrc:/src/ui/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)

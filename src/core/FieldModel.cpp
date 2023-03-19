@@ -12,14 +12,7 @@ ColorLines::FieldModel::FieldModel(QObject *parent)
     int restoredScores = db_.getPrevScores();
     QByteArray restoredFieldState = db_.getPrevFieldState();
 
-    if (!restoredFieldState.isEmpty() && restoredFieldState.size() == cCellsNb * sizeof(Cell))
-    {
-        reset(restoredScores, restoredFieldState);
-    }
-    else
-    {
-        reset();
-    }
+    reset(restoredScores, restoredFieldState);
 }
 
 ColorLines::FieldModel::~FieldModel()
@@ -134,7 +127,7 @@ void ColorLines::FieldModel::onCellClicked(int idx)
 
     bool isBall = gameField_.getCell(idx).isBall();
 
-    // selected cell with ball
+    // selected cell contains ball
     if (isBall)
     {
         // forget last selected cell
@@ -148,7 +141,7 @@ void ColorLines::FieldModel::onCellClicked(int idx)
             prevSelectedCellIdx_ = idx;
         }
     }
-    // selected cell without ball
+    // selected cell didn't contain ball
     else
     {
         // exist previously selected cell with ball

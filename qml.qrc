@@ -1,10 +1,11 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>Ball.qml</file>
-        <file>Field.qml</file>
-        <file>FieldMenu.qml</file>
-        <file>FieldBgView.qml</file>
-        <file>FieldView.qml</file>
+        <file>src/ui/Ball.qml</file>
+        <file>src/ui/Field.qml</file>
+        <file>src/ui/FieldBgView.qml</file>
+        <file>src/ui/FieldMenu.qml</file>
+        <file>src/ui/FieldView.qml</file>
+        <file>src/ui/main.qml</file>
+        <file>src/res/palette.ico</file>
     </qresource>
 </RCC>

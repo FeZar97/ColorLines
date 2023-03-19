@@ -29,6 +29,7 @@ int DbWrapper::getPrevScores() const
     if (!query.exec( "SELECT " + cScoresParamName + " from " + cDbHostname ))
     {
         qDebug() << "Error getting " + cScoresParamName + " from table:\n" << query.lastError();
+        return 0;
     }
     query.last();
     return query.value(0).toInt();
@@ -45,6 +46,7 @@ QByteArray DbWrapper::getPrevFieldState() const
     if (!query.exec("SELECT " + cFieldStateParamName + " from " + cDbHostname))
     {
         qDebug() << "Error getting " + cScoresParamName + " from table:\n" << query.lastError();
+        return {};
     }
     query.last();
     return query.value(0).toByteArray();
